@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ProgressBar
+            android:id="@+id/login_progressbar"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:indeterminate="true"
+            android:max="100"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_centered"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.5"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="@dimen/margin_line_guide" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_end="@dimen/margin_line_guide" />
+
+        <Button
+            android:id="@+id/create"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/height_button"
+            android:layout_marginStart="@dimen/margin_button"
+            android:layout_marginEnd="@dimen/margin_button"
+            android:background="@drawable/button_shape"
+            android:fontFamily="@font/googlesans_bold"
+            android:textSize="@dimen/text_size"
+            android:paddingStart="@dimen/padding_inside_button"
+            android:paddingEnd="@dimen/padding_inside_button"
+            android:text="@string/text_button_create_game"
+            android:drawableStart="@drawable/ic_hash"
+            app:layout_constraintBottom_toTopOf="@+id/guideline_centered"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline1" />
+
+        <Button
+            android:id="@+id/connect"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/height_button"
+            android:layout_marginStart="@dimen/margin_button"
+            android:layout_marginEnd="@dimen/margin_button"
+            android:background="@drawable/button_shape"
+            android:fontFamily="@font/googlesans_bold"
+            android:paddingStart="@dimen/padding_inside_button"
+            android:paddingEnd="@dimen/padding_inside_button"
+            android:text="@string/text_button_connect_game"
+            android:textSize="@dimen/text_size"
+            android:drawableStart="@drawable/ic_connect"
+            app:layout_constraintBottom_toTopOf="@+id/guideline2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline_centered" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

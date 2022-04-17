@@ -5,13 +5,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_color"
-    tools:context=".MainActivity"
+    android:keepScreenOn="true"
+    tools:context=".presentation.ui.activity.HashActivity"
     tools:deviceIds="wear">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="@dimen/inner_frame_layout_padding">
+
+        <TextView
+            android:id="@+id/token"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:gravity="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <Button
             android:id="@+id/circle_a1"
@@ -24,7 +35,7 @@
             app:layout_constraintEnd_toStartOf="@+id/line_left_vertical" />
 
         <Button
-            android:id="@+id/circle_b1"
+            android:id="@+id/circle_a2"
             android:layout_width="@dimen/circle"
             android:layout_height="@dimen/circle"
             android:layout_marginStart="@dimen/margin_circle_line"
@@ -37,7 +48,7 @@
             app:layout_constraintStart_toEndOf="@+id/line_left_vertical" />
 
         <Button
-            android:id="@+id/circle_c1"
+            android:id="@+id/circle_a3"
             android:layout_width="@dimen/circle"
             android:layout_height="@dimen/circle"
             android:layout_marginStart="@dimen/margin_circle_line"
@@ -47,7 +58,7 @@
             app:layout_constraintStart_toEndOf="@+id/line_right_vertical" />
 
         <Button
-            android:id="@+id/circle_a2"
+            android:id="@+id/circle_b1"
             android:layout_width="@dimen/circle"
             android:layout_height="@dimen/circle"
             android:layout_marginEnd="@dimen/margin_circle_line"
@@ -67,7 +78,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/circle_c2"
+            android:id="@+id/circle_b3"
             android:layout_width="@dimen/circle"
             android:layout_height="@dimen/circle"
             android:layout_marginStart="@dimen/margin_circle_line"
@@ -77,7 +88,7 @@
             app:layout_constraintTop_toTopOf="@+id/circle_b2" />
 
         <Button
-            android:id="@+id/circle_a3"
+            android:id="@+id/circle_c1"
             android:layout_width="@dimen/circle"
             android:layout_height="@dimen/circle"
             android:layout_marginTop="@dimen/margin_circle_line"
@@ -87,7 +98,7 @@
             app:layout_constraintTop_toBottomOf="@+id/line_bottom_horizontal" />
 
         <Button
-            android:id="@+id/circle_b3"
+            android:id="@+id/circle_c2"
             android:layout_width="@dimen/circle"
             android:layout_height="@dimen/circle"
             android:layout_marginStart="@dimen/margin_circle_line"
@@ -106,7 +117,7 @@
             android:layout_marginStart="@dimen/margin_circle_line"
             android:background="@drawable/circle_item"
             app:layout_constraintStart_toEndOf="@+id/line_right_vertical"
-            app:layout_constraintTop_toTopOf="@+id/circle_b3" />
+            app:layout_constraintTop_toTopOf="@+id/circle_c2" />
 
         <View
             android:id="@+id/line_top_horizontal"
@@ -117,8 +128,8 @@
             android:layout_marginBottom="@dimen/margin_circle_line"
             android:background="@android:color/white"
             app:layout_constraintBottom_toTopOf="@+id/circle_b2"
-            app:layout_constraintEnd_toEndOf="@+id/circle_c1"
-            app:layout_constraintStart_toStartOf="@+id/circle_a1" />
+            app:layout_constraintEnd_toEndOf="@+id/circle_b3"
+            app:layout_constraintStart_toStartOf="@+id/circle_b1" />
 
         <View
             android:id="@+id/line_bottom_horizontal"
@@ -128,8 +139,8 @@
             android:layout_marginTop="@dimen/margin_circle_line"
             android:layout_marginEnd="8dp"
             android:background="@android:color/white"
-            app:layout_constraintEnd_toEndOf="@+id/circle_c2"
-            app:layout_constraintStart_toStartOf="@+id/circle_a2"
+            app:layout_constraintEnd_toEndOf="@+id/circle_b3"
+            app:layout_constraintStart_toStartOf="@+id/circle_b1"
             app:layout_constraintTop_toBottomOf="@+id/circle_b2" />
 
         <View
@@ -140,9 +151,9 @@
             android:layout_marginEnd="@dimen/margin_circle_line"
             android:layout_marginBottom="8dp"
             android:background="@android:color/white"
-            app:layout_constraintBottom_toBottomOf="@+id/circle_b3"
+            app:layout_constraintBottom_toBottomOf="@+id/circle_c2"
             app:layout_constraintEnd_toStartOf="@+id/circle_b2"
-            app:layout_constraintTop_toTopOf="@+id/circle_b1" />
+            app:layout_constraintTop_toTopOf="@+id/circle_a2" />
 
         <View
             android:id="@+id/line_right_vertical"
@@ -152,9 +163,9 @@
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
             android:background="@android:color/white"
-            app:layout_constraintBottom_toBottomOf="@+id/circle_b3"
+            app:layout_constraintBottom_toBottomOf="@+id/circle_c2"
             app:layout_constraintStart_toEndOf="@+id/circle_b2"
-            app:layout_constraintTop_toTopOf="@+id/circle_b1" />
+            app:layout_constraintTop_toTopOf="@+id/circle_a2" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -166,9 +177,10 @@
             android:id="@+id/reset"
             android:layout_width="0dp"
             android:layout_height="38dp"
-            android:textColor="@android:color/white"
-            android:text="@string/text_button_reset"
             android:backgroundTint="#121212"
+            android:fontFamily="@font/googlesans_bold"
+            android:text="@string/text_button_reset"
+            android:textColor="@android:color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />

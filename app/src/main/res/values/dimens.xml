@@ -5,4 +5,11 @@
     <dimen name="circle">40dp</dimen>
     <dimen name="margin_circle_line">6dp</dimen>
     <dimen name="cross_line">1dp</dimen>
+    <dimen name="default_radius">12dp</dimen>
+    <dimen name="x_cross">4dp</dimen>
+    <dimen name="padding_inside_button">4dp</dimen>
+    <dimen name="text_size">12sp</dimen>
+    <dimen name="height_button">48dp</dimen>
+    <dimen name="margin_button">16dp</dimen>
+    <dimen name="margin_line_guide">32dp</dimen>
 </resources>
